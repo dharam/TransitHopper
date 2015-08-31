@@ -8,6 +8,7 @@ var TransitHopper = function () {
 TransitHopper.prototype.mapFactory = function (err, position, self) {
 
 	if (err) {
+		$('#map').setContent('This browser doesn\'t support location services. Kindly use browsers like Chrome that support location services.');
 		return;
 	}
 
@@ -52,7 +53,7 @@ User.prototype.getUserLocation = function (callback) {
         	callback(null, position, self);        
 
         }, function (error) {
-        	user.errorGettingLocation(error, callback, self);
+        	self.errorGettingLocation(error, callback, self);
         });
     }
 
@@ -89,6 +90,8 @@ User.prototype.errorGettingLocation = function (error, callback, self) {
             userLocationError = "An unknown error occurred."
             break;
     }
+
+    callback
 };
 
 

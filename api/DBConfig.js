@@ -3,7 +3,7 @@ var DBConfig = {
 	"protocol" 		: "mongodb",
 	"host" 			: "localhost",
 	"port"			: "27017",
-	"name"			: "TransitHopper"
+	"name"			: "transithopper"
 };
 
 module.exports = DBConfig;
