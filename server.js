@@ -52,10 +52,11 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || '8080');
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 
-var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || '8080', function () {
+var server = app.listen(app.get('port'), app.get('ipaddr'), function () {
   var host = server.address().address;
   var port = server.address().port;
 
