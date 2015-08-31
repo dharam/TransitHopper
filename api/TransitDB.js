@@ -5,7 +5,7 @@ var DBConfig 	= require('./DBConfig');
 
 var TransitDB = function (collection, data, cb) {		
 	// Connection URL. This is where your mongodb server is running.
-	var url = (process.env.OPENSHIFT_MONGODB_DB_URLDB + '/' + DBConfig.name) || (DBConfig.protocol + '://' + (process.env.OPENSHIFT_MONGODB_DB_HOST || DBConfig.host) + ':' + (process.env.OPENSHIFT_MONGODB_DB_PORT || DBConfig.port) + '/' +  DBConfig.name);
+	var url = (process.env.TRANSITHOPPER_MONGODB_DB_URL + '/' + DBConfig.name) || (DBConfig.protocol + '://' + (process.env.OPENSHIFT_MONGODB_DB_HOST || DBConfig.host) + ':' + (process.env.OPENSHIFT_MONGODB_DB_PORT || DBConfig.port) + '/' +  DBConfig.name);
 	var self = this;
 	
 	MongoClient.connect(url, function (err, db) {
