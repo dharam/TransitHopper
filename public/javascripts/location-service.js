@@ -1,6 +1,6 @@
 
 var TransitHopper = function () {	
-	//this.viewPort 	= this.getViewPortSize();
+
 	this.fullBleed(this.getViewPortSize());
 	this.user 		= new User(this.mapFactory, this);	
 }
@@ -46,6 +46,7 @@ var User  = function (callback, transitHopper) {
 
 User.prototype.getUserLocation = function (callback) {	
 	var self = this;
+
 	if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -57,7 +58,7 @@ User.prototype.getUserLocation = function (callback) {
         });
     }
 
-    return;
+	return;
 }
 
 User.prototype.setLocation = function (position, override) {	
